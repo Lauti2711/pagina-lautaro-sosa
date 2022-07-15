@@ -1,0 +1,113 @@
+* {
+    font-size: 17px;
+}
+
+body {
+    background: #fff1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header, .main, .aside, .footer {
+    padding: 20px;
+}
+
+.header {
+    flex-basis: 60px;
+}
+
+.header > h1 {
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding-right: 15px;
+    font-size: 40px;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.header > a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.header > a:hover {
+    color: #000;
+    transition: 1s;
+}
+
+.main {
+    background: greenyellow;
+    flex-basis: 300px;
+    flex-grow: 2;
+    flex-shrink: 0;
+}
+
+.main-text {
+    text-align: center;
+    font-size: 25px;
+}
+
+ul li {
+    font-size: 20px;
+}
+
+.aside {
+    flex-basis: 200px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.footer {
+    background: #f24;
+    flex-grow: 1;
+}
+
+@media screen and (min-width: 700px) {
+    .container{
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "main aside aside"
+        "main aside aside"
+        "footer footer footer";
+    }
+
+    .header {
+        grid-area: header;      
+    }
+
+    .header > h1 {
+        display: inline-block;
+        background: #a5e;
+        font-size: 50px;
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+
+    .header > a {
+        text-decoration: none;
+        color: #f00;
+    }
+
+    .header > a:hover {
+        color: #00f;
+        transition: 1s;
+    }
+
+    .main {
+        grid-area: main;
+    }
+
+    .aside {
+        grid-area: aside;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+}
